@@ -24,7 +24,7 @@ export interface Course {
   course_related_topics?: CourseRelatedTopic[] | null;
   course_reviews?: CourseReview[] | null;
   course_what_you_learns?: CourseWhatYouLearn[] | null;
-  course_modules?: CourseModule[] | null;
+  course_contents?: CourseContent[] | null;
 };
 
 export interface CourseContent {
@@ -75,6 +75,7 @@ export interface CourseModule {
   sr_number?: number;
   course_module_texts?: CourseModuleText[] | null;
   course_module_videos?: CourseModuleVideo[] | null;
+  course_module_tests?: CourseModuleTest[] | null;
 };
 
 export interface CourseModuleTest {

@@ -223,10 +223,10 @@
       "relation": "oneToMany",
       "target": "api::course-what-you-learn.course-what-you-learn"
     },
-    "course_modules": {
+    "course_contents": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::course-module.course-module"
+      "target": "api::course-content.course-content"
     }
   }
 }

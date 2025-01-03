@@ -27,6 +27,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-module-video.course-module-video"
+    },
+    "course_module_tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-test.course-module-test"
     }
   }
 }

@@ -665,9 +665,9 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::course-what-you-learn.course-what-you-learn'
     >;
-    course_modules: Schema.Attribute.Relation<
+    course_contents: Schema.Attribute.Relation<
       'oneToMany',
-      'api::course-module.course-module'
+      'api::course-content.course-content'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1182,6 +1182,10 @@ export interface ApiCourseModuleCourseModule
     course_module_videos: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-module-video.course-module-video'
+    >;
+    course_module_tests: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test.course-module-test'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
