@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_related_topics",
+  "info": {
+    "singularName": "course-related-topic",
+    "pluralName": "course-related-topics",
+    "displayName": "Course_RelatedTopic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Value": {
+      "type": "text"
+    },
+    "sr_number": {
+      "type": "integer"
+    }
+  }
+}

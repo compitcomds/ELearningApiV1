@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_module_tests",
+  "info": {
+    "singularName": "course-module-test",
+    "pluralName": "course-module-tests",
+    "displayName": "Course_Module_Test"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "marks": {
+      "type": "integer"
+    },
+    "one_time": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

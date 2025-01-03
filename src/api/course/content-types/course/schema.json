@@ -1,0 +1,232 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "required": true
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "regular_price": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "sale_price": {
+      "type": "integer",
+      "min": 1
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "Hindi  ",
+        "Bengali  ",
+        "Marathi  ",
+        "Gujarati  ",
+        "Punjabi  ",
+        "Assamese  ",
+        "Odia  ",
+        "Sindhi  ",
+        "Urdu  ",
+        "Kashmiri  ",
+        "Konkani  ",
+        "Tamil  ",
+        "Telugu  ",
+        "Kannada  ",
+        "Malayalam  ",
+        "Tulu  ",
+        "Manipuri (Meitei)  ",
+        "Bodo  ",
+        "Mizo (Lushai)  ",
+        "Lepcha  ",
+        "Santali  ",
+        "Mundari  ",
+        "Ho  ",
+        "Sanskrit  ",
+        "Maithili  ",
+        "Dogri  ",
+        "Rajasthani  ",
+        "Awadhi  ",
+        "Bhojpuri  ",
+        "Chhattisgarhi  ",
+        "Magahi  ",
+        "Garhwali  ",
+        "Kumaoni  ",
+        "Marwari  ",
+        "Haryanvi  ",
+        "Bhili  ",
+        "Gondi  ",
+        "Khasi  ",
+        "Mizo  ",
+        "Nagamese  ",
+        "Limbu  ",
+        "Sherpa  ",
+        "Chinese (Mandarin, Cantonese, Wu, Hakka, Min)  ",
+        "Japanese  ",
+        "Korean  ",
+        "Arabic  ",
+        "Persian (Farsi, Dari, Tajik)  ",
+        "Turkish  ",
+        "Hebrew  ",
+        "Thai  ",
+        "Vietnamese  ",
+        "Khmer  ",
+        "Burmese  ",
+        "Malay  ",
+        "Indonesian  ",
+        "Tagalog  ",
+        "Swahili  ",
+        "Amharic  ",
+        "Zulu  ",
+        "Yoruba  ",
+        "Hausa  ",
+        "Igbo  ",
+        "Somali  ",
+        "Shona  ",
+        "Berber  ",
+        "Afrikaans  ",
+        "Tigrinya  ",
+        "Quechua  ",
+        "Guaraní  ",
+        "Nahuatl  ",
+        "Aymara  ",
+        "Mapudungun  ",
+        "Cree  ",
+        "Inuit (Inuktitut)  ",
+        "Maori  ",
+        "Hawaiian  ",
+        "Fijian  ",
+        "Samoan  ",
+        "Tongan  ",
+        "English  ",
+        "French  ",
+        "Spanish  ",
+        "German  ",
+        "Italian  ",
+        "Portuguese  ",
+        "Russian  ",
+        "Dutch  ",
+        "Greek  ",
+        "Polish  ",
+        "Czech  ",
+        "Slovak  ",
+        "Hungarian  ",
+        "Finnish  ",
+        "Swedish  ",
+        "Norwegian  ",
+        "Danish  ",
+        "Romanian  ",
+        "Bulgarian  ",
+        "Serbian  ",
+        "Croatian  ",
+        "Bosnian  ",
+        "Slovenian  ",
+        "Latvian  ",
+        "Lithuanian  ",
+        "Estonian  ",
+        "Ukrainian  ",
+        "Belarusian  ",
+        "Georgian  ",
+        "Armenian  ",
+        "Albanian  ",
+        "Macedonian"
+      ],
+      "required": false
+    },
+    "rank_tags": {
+      "type": "enumeration",
+      "enum": [
+        "Bestseller",
+        "Trending",
+        "Popular",
+        "Value for money"
+      ]
+    },
+    "is_in_subscription": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "long_description": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "number_of_student_enrolled": {
+      "type": "integer"
+    },
+    "course_instructures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course-instructure.course-instructure",
+      "mappedBy": "courses"
+    },
+    "certificate_sample": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "course_includes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-include.course-include"
+    },
+    "course_related_topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-related-topic.course-related-topic"
+    },
+    "course_reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-review.course-review"
+    },
+    "course_what_you_learns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-what-you-learn.course-what-you-learn"
+    },
+    "course_modules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module.course-module"
+    }
+  }
+}

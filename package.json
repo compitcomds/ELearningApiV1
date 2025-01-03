@@ -6,12 +6,13 @@
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.0.6",
+    "@strapi/plugin-documentation": "^5.6.0",
     "@strapi/plugin-users-permissions": "5.0.6",
     "@strapi/provider-upload-cloudinary": "^5.6.0",
     "@strapi/strapi": "5.0.6",

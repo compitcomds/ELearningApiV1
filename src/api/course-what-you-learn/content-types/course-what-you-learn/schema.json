@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_what_you_learns",
+  "info": {
+    "singularName": "course-what-you-learn",
+    "pluralName": "course-what-you-learns",
+    "displayName": "Course_WhatYouLearn"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "text"
+    },
+    "sr_number": {
+      "type": "integer"
+    }
+  }
+}

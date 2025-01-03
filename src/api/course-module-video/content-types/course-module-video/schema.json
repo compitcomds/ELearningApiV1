@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_module_videos",
+  "info": {
+    "singularName": "course-module-video",
+    "pluralName": "course-module-videos",
+    "displayName": "Course_Module_Video",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "iFrame": {
+      "type": "text"
+    },
+    "is_include_in_sample": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_module_test_questions",
+  "info": {
+    "singularName": "course-module-test-question",
+    "pluralName": "course-module-test-questions",
+    "displayName": "Course_Module_Test_Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "media_to_question": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "multi_select_option": {
+      "type": "boolean"
+    },
+    "marks": {
+      "type": "decimal"
+    },
+    "options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-test-question-option.course-module-test-question-option"
+    }
+  }
+}

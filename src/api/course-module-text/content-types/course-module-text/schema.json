@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_module_texts",
+  "info": {
+    "singularName": "course-module-text",
+    "pluralName": "course-module-texts",
+    "displayName": "Course_Module_Text"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "course_module_text_value": {
+      "type": "text"
+    },
+    "course_module_text_resource": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -485,6 +485,975 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
+  collectionName: 'courses';
+  info: {
+    singularName: 'course';
+    pluralName: 'courses';
+    displayName: 'Course';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 4;
+      }>;
+    short_description: Schema.Attribute.Text;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    regular_price: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    sale_price: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    language: Schema.Attribute.Enumeration<
+      [
+        'Hindi  ',
+        'Bengali  ',
+        'Marathi  ',
+        'Gujarati  ',
+        'Punjabi  ',
+        'Assamese  ',
+        'Odia  ',
+        'Sindhi  ',
+        'Urdu  ',
+        'Kashmiri  ',
+        'Konkani  ',
+        'Tamil  ',
+        'Telugu  ',
+        'Kannada  ',
+        'Malayalam  ',
+        'Tulu  ',
+        'Manipuri (Meitei)  ',
+        'Bodo  ',
+        'Mizo (Lushai)  ',
+        'Lepcha  ',
+        'Santali  ',
+        'Mundari  ',
+        'Ho  ',
+        'Sanskrit  ',
+        'Maithili  ',
+        'Dogri  ',
+        'Rajasthani  ',
+        'Awadhi  ',
+        'Bhojpuri  ',
+        'Chhattisgarhi  ',
+        'Magahi  ',
+        'Garhwali  ',
+        'Kumaoni  ',
+        'Marwari  ',
+        'Haryanvi  ',
+        'Bhili  ',
+        'Gondi  ',
+        'Khasi  ',
+        'Mizo  ',
+        'Nagamese  ',
+        'Limbu  ',
+        'Sherpa  ',
+        'Chinese (Mandarin, Cantonese, Wu, Hakka, Min)  ',
+        'Japanese  ',
+        'Korean  ',
+        'Arabic  ',
+        'Persian (Farsi, Dari, Tajik)  ',
+        'Turkish  ',
+        'Hebrew  ',
+        'Thai  ',
+        'Vietnamese  ',
+        'Khmer  ',
+        'Burmese  ',
+        'Malay  ',
+        'Indonesian  ',
+        'Tagalog  ',
+        'Swahili  ',
+        'Amharic  ',
+        'Zulu  ',
+        'Yoruba  ',
+        'Hausa  ',
+        'Igbo  ',
+        'Somali  ',
+        'Shona  ',
+        'Berber  ',
+        'Afrikaans  ',
+        'Tigrinya  ',
+        'Quechua  ',
+        'Guaran\u00ED  ',
+        'Nahuatl  ',
+        'Aymara  ',
+        'Mapudungun  ',
+        'Cree  ',
+        'Inuit (Inuktitut)  ',
+        'Maori  ',
+        'Hawaiian  ',
+        'Fijian  ',
+        'Samoan  ',
+        'Tongan  ',
+        'English  ',
+        'French  ',
+        'Spanish  ',
+        'German  ',
+        'Italian  ',
+        'Portuguese  ',
+        'Russian  ',
+        'Dutch  ',
+        'Greek  ',
+        'Polish  ',
+        'Czech  ',
+        'Slovak  ',
+        'Hungarian  ',
+        'Finnish  ',
+        'Swedish  ',
+        'Norwegian  ',
+        'Danish  ',
+        'Romanian  ',
+        'Bulgarian  ',
+        'Serbian  ',
+        'Croatian  ',
+        'Bosnian  ',
+        'Slovenian  ',
+        'Latvian  ',
+        'Lithuanian  ',
+        'Estonian  ',
+        'Ukrainian  ',
+        'Belarusian  ',
+        'Georgian  ',
+        'Armenian  ',
+        'Albanian  ',
+        'Macedonian',
+      ]
+    >;
+    rank_tags: Schema.Attribute.Enumeration<
+      ['Bestseller', 'Trending', 'Popular', 'Value for money']
+    >;
+    is_in_subscription: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    long_description: Schema.Attribute.Text;
+    rating: Schema.Attribute.Decimal;
+    number_of_student_enrolled: Schema.Attribute.Integer;
+    course_instructures: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::course-instructure.course-instructure'
+    >;
+    certificate_sample: Schema.Attribute.Media<'images'>;
+    course_includes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-include.course-include'
+    >;
+    course_related_topics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-related-topic.course-related-topic'
+    >;
+    course_reviews: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-review.course-review'
+    >;
+    course_what_you_learns: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-what-you-learn.course-what-you-learn'
+    >;
+    course_modules: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
+  };
+}
+
+export interface ApiCourseContentCourseContent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_contents';
+  info: {
+    singularName: 'course-content';
+    pluralName: 'course-contents';
+    displayName: 'Course_Content';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    module_sr_number: Schema.Attribute.Integer;
+    course_modules: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-content.course-content'
+    >;
+  };
+}
+
+export interface ApiCourseIncludeCourseInclude
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_includes';
+  info: {
+    singularName: 'course-include';
+    pluralName: 'course-includes';
+    displayName: 'Course_Include';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+    lucide_icon: Schema.Attribute.Enumeration<
+      [
+        'Activity  ',
+        'Airplay  ',
+        'Alarm  ',
+        'AlertCircle  ',
+        'AlertOctagon  ',
+        'AlertTriangle  ',
+        'AlignCenter  ',
+        'AlignJustify  ',
+        'AlignLeft  ',
+        'AlignRight  ',
+        'Anchor  ',
+        'Aperture  ',
+        'Archive  ',
+        'ArrowBigDown  ',
+        'ArrowBigLeft  ',
+        'ArrowBigRight  ',
+        'ArrowBigUp  ',
+        'ArrowDown  ',
+        'ArrowLeft  ',
+        'ArrowRight  ',
+        'ArrowUp  ',
+        'AtSign  ',
+        'Award  ',
+        'Axe  ',
+        'Backpack  ',
+        'Banana  ',
+        'Banknote  ',
+        'BarChart  ',
+        'BarChart2  ',
+        'Battery  ',
+        'BatteryCharging  ',
+        'BatteryFull  ',
+        'BatteryLow  ',
+        'BatteryMedium  ',
+        'Beaker  ',
+        'Bell  ',
+        'BellOff  ',
+        'Bike  ',
+        'Binary  ',
+        'Bitcoin  ',
+        'Bluetooth  ',
+        'Bold  ',
+        'Book  ',
+        'BookOpen  ',
+        'Bookmark  ',
+        'Box  ',
+        'Briefcase  ',
+        'Brush  ',
+        'Bug  ',
+        'Building  ',
+        'Bus  ',
+        'Calculator  ',
+        'Calendar  ',
+        'Camera  ',
+        'CameraOff  ',
+        'Car  ',
+        'Carrot  ',
+        'Cast  ',
+        'Check  ',
+        'CheckCircle  ',
+        'CheckSquare  ',
+        'ChevronDown  ',
+        'ChevronLeft  ',
+        'ChevronRight  ',
+        'ChevronUp  ',
+        'Circle  ',
+        'CircleSlash  ',
+        'Clipboard  ',
+        'Clock  ',
+        'Cloud  ',
+        'CloudDrizzle  ',
+        'CloudFog  ',
+        'CloudHail  ',
+        'CloudLightning  ',
+        'CloudOff  ',
+        'CloudRain  ',
+        'CloudSnow  ',
+        'CloudSun  ',
+        'Code  ',
+        'Codepen  ',
+        'CodeSandbox  ',
+        'Coffee  ',
+        'Columns  ',
+        'Command  ',
+        'Compass  ',
+        'Contrast  ',
+        'Copy  ',
+        'CornerDownLeft  ',
+        'CornerDownRight  ',
+        'CornerLeftDown  ',
+        'CornerLeftUp  ',
+        'CornerRightDown  ',
+        'CornerRightUp  ',
+        'CornerUpLeft  ',
+        'CornerUpRight  ',
+        'Cpu  ',
+        'CreditCard  ',
+        'Crop  ',
+        'Crosshair  ',
+        'Crown  ',
+        'CurrencyDollar  ',
+        'CurrencyEuro  ',
+        'CurrencyPound  ',
+        'CurrencyYen  ',
+        'Database  ',
+        'Delete  ',
+        'Disc  ',
+        'Divide  ',
+        'DivideCircle  ',
+        'DivideSquare  ',
+        'DollarSign  ',
+        'Download  ',
+        'DownloadCloud  ',
+        'Dribbble  ',
+        'Droplet  ',
+        'Droplets  ',
+        'Edit  ',
+        'Edit2  ',
+        'Edit3  ',
+        'Egg  ',
+        'Equal  ',
+        'EqualNot  ',
+        'Eraser  ',
+        'ExternalLink  ',
+        'Eye  ',
+        'EyeOff  ',
+        'Facebook  ',
+        'FastForward  ',
+        'Feather  ',
+        'Figma  ',
+        'File  ',
+        'FileCheck  ',
+        'FileCode  ',
+        'FileMinus  ',
+        'FilePlus  ',
+        'FileText  ',
+        'FileX  ',
+        'Film  ',
+        'Filter  ',
+        'Flag  ',
+        'Flame  ',
+        'Flashlight  ',
+        'Flask  ',
+        'FlipHorizontal  ',
+        'FlipVertical  ',
+        'Flower  ',
+        'Folder  ',
+        'FolderMinus  ',
+        'FolderPlus  ',
+        'Form  ',
+        'Forward  ',
+        'Frown  ',
+        'Gamepad  ',
+        'Gauge  ',
+        'Gem  ',
+        'Gift  ',
+        'GitBranch  ',
+        'GitCommit  ',
+        'GitMerge  ',
+        'GitPullRequest  ',
+        'GitHub  ',
+        'GitLab  ',
+        'Globe  ',
+        'Globe2  ',
+        'Grab  ',
+        'Grid  ',
+        'GripHorizontal  ',
+        'GripVertical  ',
+        'Hammer  ',
+        'Hand  ',
+        'HardDrive  ',
+        'Hash  ',
+        'Headphones  ',
+        'Heart  ',
+        'HeartBroken  ',
+        'HelpCircle  ',
+        'Hexagon  ',
+        'Highlighter  ',
+        'History  ',
+        'Home  ',
+        'Hourglass  ',
+        'IceCream  ',
+        'Image  ',
+        'Inbox  ',
+        'Infinity  ',
+        'Info  ',
+        'Instagram  ',
+        'Italic  ',
+        'Joystick  ',
+        'Key  ',
+        'Keyboard  ',
+        'Landmark  ',
+        'Languages  ',
+        'Laptop  ',
+        'Layout  ',
+        'Leaf  ',
+        'LifeBuoy  ',
+        'Lightbulb  ',
+        'Link  ',
+        'Link2  ',
+        'LinkedIn  ',
+        'List  ',
+        'Loader  ',
+        'Lock  ',
+        'LogIn  ',
+        'LogOut  ',
+        'Mail  ',
+        'MailOpen  ',
+        'Map  ',
+        'MapPin  ',
+        'Maximize  ',
+        'Maximize2  ',
+        'Medal  ',
+        'Megaphone  ',
+        'Meh  ',
+        'Menu  ',
+        'MessageCircle  ',
+        'MessageSquare  ',
+        'Mic  ',
+        'MicOff  ',
+        'Minimize  ',
+        'Minimize2  ',
+        'Minus  ',
+        'MinusCircle  ',
+        'MinusSquare  ',
+        'Monitor  ',
+        'MonitorOff  ',
+        'Moon  ',
+        'MoreHorizontal  ',
+        'MoreVertical  ',
+        'Mountain  ',
+        'MousePointer  ',
+        'Move  ',
+        'Music  ',
+        'Navigation  ',
+        'Navigation2  ',
+        'Network  ',
+        'Octagon  ',
+        'Option  ',
+        'Outdent  ',
+        'Package  ',
+        'Palette  ',
+        'Paperclip  ',
+        'Pause  ',
+        'PauseCircle  ',
+        'PenTool  ',
+        'Pencil  ',
+        'Percent  ',
+        'Phone  ',
+        'PhoneCall  ',
+        'PhoneForwarded  ',
+        'PhoneIncoming  ',
+        'PhoneMissed  ',
+        'PhoneOff  ',
+        'PhoneOutgoing  ',
+        'PictureInPicture  ',
+        'PieChart  ',
+        'Pin  ',
+        'Play  ',
+        'PlayCircle  ',
+        'Plug  ',
+        'Plus  ',
+        'PlusCircle  ',
+        'PlusSquare  ',
+        'Pocket  ',
+        'Power  ',
+        'Printer  ',
+        'Puzzle  ',
+        'QrCode  ',
+        'Quote  ',
+        'Radio  ',
+        'RadioButton  ',
+        'Rewind  ',
+        'Rocket  ',
+        'RotateCcw  ',
+        'RotateCw  ',
+        'Rss  ',
+        'Ruler  ',
+        'Save  ',
+        'Scale  ',
+        'Scissors  ',
+        'ScreenShare  ',
+        'Search  ',
+        'Send  ',
+        'Server  ',
+        'Settings  ',
+        'Share  ',
+        'Share2  ',
+        'Shield  ',
+        'ShieldOff  ',
+        'ShoppingBag  ',
+        'ShoppingCart  ',
+        'Shovel  ',
+        'Shrink  ',
+        'Sidebar  ',
+        'Signal  ',
+        'SkipBack  ',
+        'SkipForward  ',
+        'Slack  ',
+        'Slash  ',
+        'Sliders  ',
+        'Smartphone  ',
+        'Smile  ',
+        'Snowflake  ',
+        'SortAscending  ',
+        'SortDescending  ',
+        'Speaker  ',
+        'Sprout  ',
+        'Square  ',
+        'Star  ',
+        'StopCircle  ',
+        'Strikethrough  ',
+        'Subscript  ',
+        'Sun  ',
+        'Sunrise  ',
+        'Sunset  ',
+        'Superscript  ',
+        'SwissFranc  ',
+        'SwitchCamera  ',
+        'Table  ',
+        'Tablet  ',
+        'Tag  ',
+        'Target  ',
+        'Tent  ',
+        'Terminal  ',
+        'Thermometer  ',
+        'ThumbsDown  ',
+        'ThumbsUp  ',
+        'Ticket  ',
+        'Timer  ',
+        'ToggleLeft  ',
+        'ToggleRight  ',
+        'Tool  ',
+        'Trash  ',
+        'Trash2  ',
+        'Trello  ',
+        'TrendingDown  ',
+        'TrendingUp  ',
+        'Triangle  ',
+        'Trophy  ',
+        'Truck  ',
+        'Tv  ',
+        'Twitch  ',
+        'Twitter  ',
+        'Type  ',
+        'Umbrella  ',
+        'Underline  ',
+        'Undo  ',
+        'Unlink  ',
+        'Unlock  ',
+        'Upload  ',
+        'UploadCloud  ',
+        'User  ',
+        'UserCheck  ',
+        'UserMinus  ',
+        'UserPlus  ',
+        'UserX  ',
+        'Users  ',
+        'Video  ',
+        'VideoOff  ',
+        'View  ',
+        'Voicemail  ',
+        'Volume  ',
+        'Volume1  ',
+        'Volume2  ',
+        'VolumeX  ',
+        'Wallet  ',
+        'Watch  ',
+        'Wifi  ',
+        'WifiOff  ',
+        'Wind  ',
+        'Window  ',
+        'Wrench  ',
+        'X  ',
+        'XCircle  ',
+        'XSquare  ',
+        'Youtube  ',
+        'Zap  ',
+        'ZapOff  ',
+        'ZoomIn  ',
+        'ZoomOut  ',
+      ]
+    >;
+    sr_number: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-include.course-include'
+    >;
+  };
+}
+
+export interface ApiCourseInstructureCourseInstructure
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_instructures';
+  info: {
+    singularName: 'course-instructure';
+    pluralName: 'course-instructures';
+    displayName: 'Course_Instructure';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    courses: Schema.Attribute.Relation<'manyToMany', 'api::course.course'>;
+    linkedIn_link: Schema.Attribute.String;
+    website_link: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-instructure.course-instructure'
+    >;
+  };
+}
+
+export interface ApiCourseModuleCourseModule
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_modules';
+  info: {
+    singularName: 'course-module';
+    pluralName: 'course-modules';
+    displayName: 'Course_Module';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    sr_number: Schema.Attribute.Integer;
+    course_module_texts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-text.course-module-text'
+    >;
+    course_module_videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-video.course-module-video'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
+    >;
+  };
+}
+
+export interface ApiCourseModuleTestCourseModuleTest
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_module_tests';
+  info: {
+    singularName: 'course-module-test';
+    pluralName: 'course-module-tests';
+    displayName: 'Course_Module_Test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    marks: Schema.Attribute.Integer;
+    one_time: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test.course-module-test'
+    >;
+  };
+}
+
+export interface ApiCourseModuleTestQuestionCourseModuleTestQuestion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_module_test_questions';
+  info: {
+    singularName: 'course-module-test-question';
+    pluralName: 'course-module-test-questions';
+    displayName: 'Course_Module_Test_Question';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Schema.Attribute.Text;
+    media_to_question: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    multi_select_option: Schema.Attribute.Boolean;
+    marks: Schema.Attribute.Decimal;
+    options: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test-question-option.course-module-test-question-option'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test-question.course-module-test-question'
+    >;
+  };
+}
+
+export interface ApiCourseModuleTestQuestionOptionCourseModuleTestQuestionOption
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_module_test_question_options';
+  info: {
+    singularName: 'course-module-test-question-option';
+    pluralName: 'course-module-test-question-options';
+    displayName: 'Course_Module_Test_Question_Option';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    option_value: Schema.Attribute.Text;
+    media_in_option: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    correct: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test-question-option.course-module-test-question-option'
+    >;
+  };
+}
+
+export interface ApiCourseModuleTextCourseModuleText
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_module_texts';
+  info: {
+    singularName: 'course-module-text';
+    pluralName: 'course-module-texts';
+    displayName: 'Course_Module_Text';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    course_module_text_value: Schema.Attribute.Text;
+    course_module_text_resource: Schema.Attribute.Media<'files'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-text.course-module-text'
+    >;
+  };
+}
+
+export interface ApiCourseModuleVideoCourseModuleVideo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_module_videos';
+  info: {
+    singularName: 'course-module-video';
+    pluralName: 'course-module-videos';
+    displayName: 'Course_Module_Video';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    iFrame: Schema.Attribute.Text;
+    is_include_in_sample: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-video.course-module-video'
+    >;
+  };
+}
+
+export interface ApiCourseRelatedTopicCourseRelatedTopic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_related_topics';
+  info: {
+    singularName: 'course-related-topic';
+    pluralName: 'course-related-topics';
+    displayName: 'Course_RelatedTopic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Value: Schema.Attribute.Text;
+    sr_number: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-related-topic.course-related-topic'
+    >;
+  };
+}
+
+export interface ApiCourseReviewCourseReview
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_reviews';
+  info: {
+    singularName: 'course-review';
+    pluralName: 'course-reviews';
+    displayName: 'Course_Review';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+    rating: Schema.Attribute.Decimal;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-review.course-review'
+    >;
+  };
+}
+
+export interface ApiCourseWhatYouLearnCourseWhatYouLearn
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_what_you_learns';
+  info: {
+    singularName: 'course-what-you-learn';
+    pluralName: 'course-what-you-learns';
+    displayName: 'Course_WhatYouLearn';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    value: Schema.Attribute.Text;
+    sr_number: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-what-you-learn.course-what-you-learn'
+    >;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -860,6 +1829,19 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::course.course': ApiCourseCourse;
+      'api::course-content.course-content': ApiCourseContentCourseContent;
+      'api::course-include.course-include': ApiCourseIncludeCourseInclude;
+      'api::course-instructure.course-instructure': ApiCourseInstructureCourseInstructure;
+      'api::course-module.course-module': ApiCourseModuleCourseModule;
+      'api::course-module-test.course-module-test': ApiCourseModuleTestCourseModuleTest;
+      'api::course-module-test-question.course-module-test-question': ApiCourseModuleTestQuestionCourseModuleTestQuestion;
+      'api::course-module-test-question-option.course-module-test-question-option': ApiCourseModuleTestQuestionOptionCourseModuleTestQuestionOption;
+      'api::course-module-text.course-module-text': ApiCourseModuleTextCourseModuleText;
+      'api::course-module-video.course-module-video': ApiCourseModuleVideoCourseModuleVideo;
+      'api::course-related-topic.course-related-topic': ApiCourseRelatedTopicCourseRelatedTopic;
+      'api::course-review.course-review': ApiCourseReviewCourseReview;
+      'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
