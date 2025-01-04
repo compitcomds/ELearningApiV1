@@ -1,4 +1,7 @@
 // config/plugins.ts
+import type { EmailConfig } from "strapi-plugin-email-designer-5/dist/server/src";
+
+
 export default ({ env }) => ({
     "gen-types": {
       enabled: true,
@@ -29,5 +32,43 @@ export default ({ env }) => ({
         },
       },
     },
-    
+    email: {
+      config: {
+        provider: 'nodemailer',
+        providerOptions: {
+          host: 'smtp.gmail.com',
+          port: 587,
+          auth: {
+            user: env('GMAIL_USER'), // Your Gmail address
+            pass: env('GMAIL_PASSWORD'), // Your Gmail password or app password
+          },
+          secure: false, // Use true for port 465, false for other ports
+        },
+        settings: {
+          defaultFrom: env('GMAIL_USER'),
+          defaultReplyTo: env('GMAIL_USER'),
+        },
+      },
+    },
+    // This is the configuration for the Email Designer plugin
+    "email-designer-5": {
+      enabled: true,
+      // Your custom configuration here
+      config: {
+        // Here the Merge Tags defined will be merged with the defaults above
+        mergeTags: {
+          company: {
+            name: "Company",
+            mergeTags: {
+              name: {
+                name: "Company Name",
+                value: "ACME Corp",
+                sample: "ACME Corp",
+              },
+            },
+          },
+        },
+      } as EmailConfig,
+    },
+
   });

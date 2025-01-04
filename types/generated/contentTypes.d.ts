@@ -336,6 +336,49 @@ export interface PluginReviewWorkflowsWorkflowStage
   };
 }
 
+export interface PluginEmailDesigner5EmailDesignerTemplate
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'email-designer-templates';
+  info: {
+    singularName: 'email-designer-template';
+    pluralName: 'email-designer-templates';
+    displayName: 'Email Designer Templates';
+    description: 'This collection stores email templates created with the email designer.';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    templateReferenceId: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    design: Schema.Attribute.JSON;
+    name: Schema.Attribute.String;
+    subject: Schema.Attribute.String;
+    bodyHtml: Schema.Attribute.Text;
+    bodyText: Schema.Attribute.Text;
+    tags: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::email-designer-5.email-designer-template'
+    >;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Struct.CollectionTypeSchema {
   collectionName: 'up_permissions';
@@ -1830,6 +1873,7 @@ declare module '@strapi/strapi' {
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
+      'plugin::email-designer-5.email-designer-template': PluginEmailDesigner5EmailDesignerTemplate;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;

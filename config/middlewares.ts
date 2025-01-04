@@ -29,4 +29,17 @@ export default [
       },
     },
   },
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          "script-src": ["'self'", "'unsafe-inline'", "editor.unlayer.com"],
+          "frame-src": ["'self'", "editor.unlayer.com"],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  }
 ];
