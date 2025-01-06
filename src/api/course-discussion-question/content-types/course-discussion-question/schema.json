@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_discussion_questions",
+  "info": {
+    "singularName": "course-discussion-question",
+    "pluralName": "course-discussion-questions",
+    "displayName": "Course_Discussion_Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questionImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "question": {
+      "type": "text"
+    },
+    "upvote": {
+      "type": "integer"
+    },
+    "course_discussion_question_answeres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-discussion-question-answere.course-discussion-question-answere"
+    }
+  }
+}

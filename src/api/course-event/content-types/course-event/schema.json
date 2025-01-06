@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_events",
+  "info": {
+    "singularName": "course-event",
+    "pluralName": "course-events",
+    "displayName": "Course_Event "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "starts": {
+      "type": "datetime"
+    },
+    "ends": {
+      "type": "datetime"
+    },
+    "joiningLink": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "is_online": {
+      "type": "boolean",
+      "default": true
+    },
+    "streetAddress": {
+      "type": "string"
+    },
+    "cityOrTown": {
+      "type": "string"
+    },
+    "State": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "integer",
+      "max": 999999,
+      "min": 100000
+    },
+    "Country": {
+      "type": "string"
+    }
+  }
+}

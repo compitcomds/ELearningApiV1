@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_course_histories",
+  "info": {
+    "singularName": "user-course-history",
+    "pluralName": "user-course-histories",
+    "displayName": "User_CourseHistory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_module_tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-test.course-module-test"
+    },
+    "course_module_texts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-text.course-module-text"
+    },
+    "course_module_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-video.course-module-video"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

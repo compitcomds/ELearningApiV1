@@ -1,4 +1,18 @@
 
+export interface Categorie {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name?: string;
+  thumbnail?: Media | null;
+  banner?: Media | null;
+  courses?: Course[] | null;
+  description?: string;
+};
+
 export interface Course {
   id?: number;
   documentId?: string;
@@ -25,6 +39,9 @@ export interface Course {
   course_reviews?: CourseReview[] | null;
   course_what_you_learns?: CourseWhatYouLearn[] | null;
   course_contents?: CourseContent[] | null;
+  certificate_sample_text?: string;
+  course_discussion?: CourseDiscussion | null;
+  course_events?: CourseEvent[] | null;
 };
 
 export interface CourseContent {
@@ -36,6 +53,63 @@ export interface CourseContent {
   locale?: string | null;
   module_sr_number?: number;
   course_modules?: CourseModule[] | null;
+};
+
+export interface CourseDiscussion {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  Name?: string;
+  course_discussion_questions?: CourseDiscussionQuestion[] | null;
+};
+
+export interface CourseDiscussionQuestion {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  questionImage?: Media[] | null;
+  question?: string;
+  upvote?: number;
+  course_discussion_question_answeres?: CourseDiscussionQuestionAnswere[] | null;
+};
+
+export interface CourseDiscussionQuestionAnswere {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  answere?: string;
+  answereImages?: Media[] | null;
+};
+
+export interface CourseEvent {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  title?: string;
+  description?: string;
+  images?: Media[] | null;
+  starts?: Date | string;
+  ends?: Date | string;
+  joiningLink?: string;
+  password?: string;
+  is_online?: boolean;
+  streetAddress?: string;
+  cityOrTown?: string;
+  State?: string;
+  postalCode?: number;
+  Country?: string;
 };
 
 export interface CourseInclude {
@@ -173,6 +247,31 @@ export interface CourseWhatYouLearn {
   locale?: string | null;
   value?: string;
   sr_number?: number;
+};
+
+export interface UserCourseHistory {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  course_module_tests?: CourseModuleTest[] | null;
+  course_module_texts?: CourseModuleText[] | null;
+  course_module_videos?: CourseModuleVideo[] | null;
+  is_completed?: boolean;
+};
+
+export interface UserCoursePurchased {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  course?: Course | null;
+  validUpto?: Date | string;
+  result?: "Pass" | "Fail" | "Absent";
 };
 
 export interface Media {

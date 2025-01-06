@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_course_purchaseds",
+  "info": {
+    "singularName": "user-course-purchased",
+    "pluralName": "user-course-purchaseds",
+    "displayName": "User_CoursePurchased",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    },
+    "validUpto": {
+      "type": "date"
+    },
+    "result": {
+      "type": "enumeration",
+      "enum": [
+        "Pass",
+        "Fail",
+        "Absent"
+      ]
+    }
+  }
+}

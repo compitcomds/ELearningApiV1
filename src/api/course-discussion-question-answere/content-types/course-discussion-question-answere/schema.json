@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_discussion_question_answeres",
+  "info": {
+    "singularName": "course-discussion-question-answere",
+    "pluralName": "course-discussion-question-answeres",
+    "displayName": "Course_Discussion_Question_Answere"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answere": {
+      "type": "text"
+    },
+    "answereImages": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

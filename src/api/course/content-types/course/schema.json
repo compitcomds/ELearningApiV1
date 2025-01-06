@@ -227,6 +227,19 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-content.course-content"
+    },
+    "certificate_sample_text": {
+      "type": "text"
+    },
+    "course_discussion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-discussion.course-discussion"
+    },
+    "course_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-event.course-event"
     }
   }
 }
