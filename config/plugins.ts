@@ -70,5 +70,12 @@ export default ({ env }) => ({
         },
       } as EmailConfig,
     },
+    'users-permissions': {
+    config: {
+      jwt: {
+        expiresIn: '3d', // Set token to expire in 3 days
+      },
+    },
+  },
 
   });
