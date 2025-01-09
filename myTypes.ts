@@ -7,10 +7,10 @@ export interface Categorie {
   publishedAt?: Date | string;
   locale?: string | null;
   name?: string;
-  thumbnail?: Media | null;
-  banner?: Media | null;
   courses?: Course[] | null;
   description?: string;
+  category_banner?: WebMedia | null;
+  category_thumbnail?: WebMedia | null;
 };
 
 export interface Course {
@@ -22,8 +22,6 @@ export interface Course {
   locale?: string | null;
   name: string;
   short_description?: string;
-  thumbnail?: Media | null;
-  banner?: Media | null;
   regular_price: number;
   sale_price?: number;
   language?: "Hindi  " | "Bengali  " | "Marathi  " | "Gujarati  " | "Punjabi  " | "Assamese  " | "Odia  " | "Sindhi  " | "Urdu  " | "Kashmiri  " | "Konkani  " | "Tamil  " | "Telugu  " | "Kannada  " | "Malayalam  " | "Tulu  " | "Manipuri (Meitei)  " | "Bodo  " | "Mizo (Lushai)  " | "Lepcha  " | "Santali  " | "Mundari  " | "Ho  " | "Sanskrit  " | "Maithili  " | "Dogri  " | "Rajasthani  " | "Awadhi  " | "Bhojpuri  " | "Chhattisgarhi  " | "Magahi  " | "Garhwali  " | "Kumaoni  " | "Marwari  " | "Haryanvi  " | "Bhili  " | "Gondi  " | "Khasi  " | "Mizo  " | "Nagamese  " | "Limbu  " | "Sherpa  " | "Chinese (Mandarin, Cantonese, Wu, Hakka, Min)  " | "Japanese  " | "Korean  " | "Arabic  " | "Persian (Farsi, Dari, Tajik)  " | "Turkish  " | "Hebrew  " | "Thai  " | "Vietnamese  " | "Khmer  " | "Burmese  " | "Malay  " | "Indonesian  " | "Tagalog  " | "Swahili  " | "Amharic  " | "Zulu  " | "Yoruba  " | "Hausa  " | "Igbo  " | "Somali  " | "Shona  " | "Berber  " | "Afrikaans  " | "Tigrinya  " | "Quechua  " | "Guaraní  " | "Nahuatl  " | "Aymara  " | "Mapudungun  " | "Cree  " | "Inuit (Inuktitut)  " | "Maori  " | "Hawaiian  " | "Fijian  " | "Samoan  " | "Tongan  " | "English  " | "French  " | "Spanish  " | "German  " | "Italian  " | "Portuguese  " | "Russian  " | "Dutch  " | "Greek  " | "Polish  " | "Czech  " | "Slovak  " | "Hungarian  " | "Finnish  " | "Swedish  " | "Norwegian  " | "Danish  " | "Romanian  " | "Bulgarian  " | "Serbian  " | "Croatian  " | "Bosnian  " | "Slovenian  " | "Latvian  " | "Lithuanian  " | "Estonian  " | "Ukrainian  " | "Belarusian  " | "Georgian  " | "Armenian  " | "Albanian  " | "Macedonian";
@@ -42,6 +40,8 @@ export interface Course {
   certificate_sample_text?: string;
   course_discussion?: CourseDiscussion | null;
   course_events?: CourseEvent[] | null;
+  course_banner?: WebMedia | null;
+  course_thumbnail?: WebMedia | null;
 };
 
 export interface CourseContent {
@@ -73,10 +73,10 @@ export interface CourseDiscussionQuestion {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  questionImage?: Media[] | null;
   question?: string;
   upvote?: number;
   course_discussion_question_answeres?: CourseDiscussionQuestionAnswere[] | null;
+  questionImage?: WebMedia | null;
 };
 
 export interface CourseDiscussionQuestionAnswere {
@@ -87,7 +87,7 @@ export interface CourseDiscussionQuestionAnswere {
   publishedAt?: Date | string;
   locale?: string | null;
   answere?: string;
-  answereImages?: Media[] | null;
+  answere_images?: WebMedia[] | null;
 };
 
 export interface CourseEvent {
@@ -99,7 +99,6 @@ export interface CourseEvent {
   locale?: string | null;
   title?: string;
   description?: string;
-  images?: Media[] | null;
   starts?: Date | string;
   ends?: Date | string;
   joiningLink?: string;
@@ -110,6 +109,7 @@ export interface CourseEvent {
   State?: string;
   postalCode?: number;
   Country?: string;
+  image?: WebMedia[] | null;
 };
 
 export interface CourseInclude {
@@ -172,10 +172,10 @@ export interface CourseModuleTestQuestion {
   publishedAt?: Date | string;
   locale?: string | null;
   question?: string;
-  media_to_question?: Media[] | null;
   multi_select_option?: boolean;
   marks?: number;
   options?: CourseModuleTestQuestionOption[] | null;
+  media_to_question?: WebMedia[] | null;
 };
 
 export interface CourseModuleTestQuestionOption {
@@ -186,8 +186,8 @@ export interface CourseModuleTestQuestionOption {
   publishedAt?: Date | string;
   locale?: string | null;
   option_value?: string;
-  media_in_option?: Media[] | null;
   correct?: boolean;
+  media_in_option?: WebMedia[] | null;
 };
 
 export interface CourseModuleText {
@@ -199,7 +199,7 @@ export interface CourseModuleText {
   locale?: string | null;
   title?: string;
   course_module_text_value?: string;
-  course_module_text_resource?: Media | null;
+  course_module_text_resources?: WebMedia[] | null;
 };
 
 export interface CourseModuleVideo {
@@ -272,6 +272,22 @@ export interface UserCoursePurchased {
   course?: Course | null;
   validUpto?: Date | string;
   result?: "Pass" | "Fail" | "Absent";
+};
+
+export interface WebMedia {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  media_document_id?: string;
+  media_original_name?: string;
+  media_name?: string;
+  isFolder?: boolean;
+  media_alt?: string;
+  media_caption?: string;
+  media_parent?: string;
 };
 
 export interface Media {

@@ -541,16 +541,23 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     singularName: 'categorie';
     pluralName: 'categories';
     displayName: 'Categorie';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Schema.Attribute.String;
-    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     description: Schema.Attribute.Text;
+    category_banner: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
+    category_thumbnail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -585,8 +592,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
         minLength: 4;
       }>;
     short_description: Schema.Attribute.Text;
-    thumbnail: Schema.Attribute.Media<'images'>;
-    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     regular_price: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
@@ -759,6 +764,14 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::course-event.course-event'
     >;
+    course_banner: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
+    course_thumbnail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -850,12 +863,15 @@ export interface ApiCourseDiscussionQuestionCourseDiscussionQuestion
     draftAndPublish: true;
   };
   attributes: {
-    questionImage: Schema.Attribute.Media<'images', true>;
     question: Schema.Attribute.Text;
     upvote: Schema.Attribute.Integer;
     course_discussion_question_answeres: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-discussion-question-answere.course-discussion-question-answere'
+    >;
+    questionImage: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -879,13 +895,17 @@ export interface ApiCourseDiscussionQuestionAnswereCourseDiscussionQuestionAnswe
     singularName: 'course-discussion-question-answere';
     pluralName: 'course-discussion-question-answeres';
     displayName: 'Course_Discussion_Question_Answere';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     answere: Schema.Attribute.Text;
-    answereImages: Schema.Attribute.Media<'images', true>;
+    answere_images: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -907,6 +927,7 @@ export interface ApiCourseEventCourseEvent extends Struct.CollectionTypeSchema {
     singularName: 'course-event';
     pluralName: 'course-events';
     displayName: 'Course_Event ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -914,7 +935,6 @@ export interface ApiCourseEventCourseEvent extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    images: Schema.Attribute.Media<'images', true>;
     starts: Schema.Attribute.DateTime;
     ends: Schema.Attribute.DateTime;
     joiningLink: Schema.Attribute.String;
@@ -932,6 +952,7 @@ export interface ApiCourseEventCourseEvent extends Struct.CollectionTypeSchema {
         number
       >;
     Country: Schema.Attribute.String;
+    image: Schema.Attribute.Relation<'oneToMany', 'api::web-media.web-media'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1479,15 +1500,15 @@ export interface ApiCourseModuleTestQuestionCourseModuleTestQuestion
   };
   attributes: {
     question: Schema.Attribute.Text;
-    media_to_question: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     multi_select_option: Schema.Attribute.Boolean;
     marks: Schema.Attribute.Decimal;
     options: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-module-test-question-option.course-module-test-question-option'
+    >;
+    media_to_question: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1511,17 +1532,18 @@ export interface ApiCourseModuleTestQuestionOptionCourseModuleTestQuestionOption
     singularName: 'course-module-test-question-option';
     pluralName: 'course-module-test-question-options';
     displayName: 'Course_Module_Test_Question_Option';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     option_value: Schema.Attribute.Text;
-    media_in_option: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     correct: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    media_in_option: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1544,6 +1566,7 @@ export interface ApiCourseModuleTextCourseModuleText
     singularName: 'course-module-text';
     pluralName: 'course-module-texts';
     displayName: 'Course_Module_Text';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1551,7 +1574,10 @@ export interface ApiCourseModuleTextCourseModuleText
   attributes: {
     title: Schema.Attribute.String;
     course_module_text_value: Schema.Attribute.Text;
-    course_module_text_resource: Schema.Attribute.Media<'files'>;
+    course_module_text_resources: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1759,6 +1785,39 @@ export interface ApiUserCoursePurchasedUserCoursePurchased
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::user-course-purchased.user-course-purchased'
+    >;
+  };
+}
+
+export interface ApiWebMediaWebMedia extends Struct.CollectionTypeSchema {
+  collectionName: 'web_medias';
+  info: {
+    singularName: 'web-media';
+    pluralName: 'web-medias';
+    displayName: 'Web_Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    media_document_id: Schema.Attribute.String;
+    media_original_name: Schema.Attribute.String;
+    media_name: Schema.Attribute.String;
+    isFolder: Schema.Attribute.Boolean;
+    media_alt: Schema.Attribute.String;
+    media_caption: Schema.Attribute.String;
+    media_parent: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
     >;
   };
 }
@@ -2159,6 +2218,7 @@ declare module '@strapi/strapi' {
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;
       'api::user-course-purchased.user-course-purchased': ApiUserCoursePurchasedUserCoursePurchased;
+      'api::web-media.web-media': ApiWebMediaWebMedia;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

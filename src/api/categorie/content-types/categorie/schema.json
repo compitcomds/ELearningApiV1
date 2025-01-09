@@ -4,7 +4,8 @@
   "info": {
     "singularName": "categorie",
     "pluralName": "categories",
-    "displayName": "Categorie"
+    "displayName": "Categorie",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,26 +15,6 @@
     "name": {
       "type": "string"
     },
-    "thumbnail": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "banner": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "courses": {
       "type": "relation",
       "relation": "oneToMany",
@@ -41,6 +22,16 @@
     },
     "description": {
       "type": "text"
+    },
+    "category_banner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::web-media.web-media"
+    },
+    "category_thumbnail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::web-media.web-media"
     }
   }
 }

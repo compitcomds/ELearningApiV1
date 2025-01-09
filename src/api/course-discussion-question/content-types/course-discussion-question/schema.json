@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "questionImage": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "question": {
       "type": "text"
     },
@@ -30,6 +22,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-discussion-question-answere.course-discussion-question-answere"
+    },
+    "questionImage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::web-media.web-media"
     }
   }
 }

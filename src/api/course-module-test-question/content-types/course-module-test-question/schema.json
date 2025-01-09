@@ -15,17 +15,6 @@
     "question": {
       "type": "text"
     },
-    "media_to_question": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "multi_select_option": {
       "type": "boolean"
     },
@@ -36,6 +25,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-module-test-question-option.course-module-test-question-option"
+    },
+    "media_to_question": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
     }
   }
 }

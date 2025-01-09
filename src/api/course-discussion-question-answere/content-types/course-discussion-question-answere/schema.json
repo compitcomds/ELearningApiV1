@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-discussion-question-answere",
     "pluralName": "course-discussion-question-answeres",
-    "displayName": "Course_Discussion_Question_Answere"
+    "displayName": "Course_Discussion_Question_Answere",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,12 +15,10 @@
     "answere": {
       "type": "text"
     },
-    "answereImages": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": true
+    "answere_images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
     }
   }
 }

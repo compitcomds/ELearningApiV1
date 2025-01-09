@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-event",
     "pluralName": "course-events",
-    "displayName": "Course_Event "
+    "displayName": "Course_Event ",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,13 +17,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "images": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": true
     },
     "starts": {
       "type": "datetime"
@@ -56,6 +50,11 @@
     },
     "Country": {
       "type": "string"
+    },
+    "image": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
     }
   }
 }

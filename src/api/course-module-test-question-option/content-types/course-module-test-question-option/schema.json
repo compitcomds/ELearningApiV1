@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-module-test-question-option",
     "pluralName": "course-module-test-question-options",
-    "displayName": "Course_Module_Test_Question_Option"
+    "displayName": "Course_Module_Test_Question_Option",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,19 +15,14 @@
     "option_value": {
       "type": "text"
     },
-    "media_in_option": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "correct": {
       "type": "boolean",
       "default": false
+    },
+    "media_in_option": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
     }
   }
 }
