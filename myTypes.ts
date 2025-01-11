@@ -9,8 +9,8 @@ export interface Categorie {
   name?: string;
   courses?: Course[] | null;
   description?: string;
-  category_banner?: WebMedia | null;
-  category_thumbnail?: WebMedia | null;
+  category_banners?: WebMedia[] | null;
+  category_thumbnails?: WebMedia[] | null;
 };
 
 export interface Course {

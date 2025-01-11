@@ -23,14 +23,14 @@
     "description": {
       "type": "text"
     },
-    "category_banner": {
+    "category_banners": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::web-media.web-media"
     },
-    "category_thumbnail": {
+    "category_thumbnails": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::web-media.web-media"
     }
   }

@@ -550,12 +550,12 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     description: Schema.Attribute.Text;
-    category_banner: Schema.Attribute.Relation<
-      'oneToOne',
+    category_banners: Schema.Attribute.Relation<
+      'oneToMany',
       'api::web-media.web-media'
     >;
-    category_thumbnail: Schema.Attribute.Relation<
-      'oneToOne',
+    category_thumbnails: Schema.Attribute.Relation<
+      'oneToMany',
       'api::web-media.web-media'
     >;
     createdAt: Schema.Attribute.DateTime;
