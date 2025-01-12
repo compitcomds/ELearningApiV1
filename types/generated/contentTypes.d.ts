@@ -734,7 +734,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::course-instructure.course-instructure'
     >;
-    certificate_sample: Schema.Attribute.Media<'images'>;
     course_includes: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-include.course-include'
@@ -769,6 +768,10 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'api::web-media.web-media'
     >;
     course_thumbnail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
+    certificate_sample: Schema.Attribute.Relation<
       'oneToOne',
       'api::web-media.web-media'
     >;

@@ -176,14 +176,6 @@
       "target": "api::course-instructure.course-instructure",
       "mappedBy": "courses"
     },
-    "certificate_sample": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "course_includes": {
       "type": "relation",
       "relation": "oneToMany",
@@ -228,6 +220,11 @@
       "target": "api::web-media.web-media"
     },
     "course_thumbnail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::web-media.web-media"
+    },
+    "certificate_sample": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::web-media.web-media"

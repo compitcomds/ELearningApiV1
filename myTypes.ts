@@ -31,7 +31,6 @@ export interface Course {
   rating?: number;
   number_of_student_enrolled?: number;
   course_instructures?: CourseInstructure[] | null;
-  certificate_sample?: Media | null;
   course_includes?: CourseInclude[] | null;
   course_related_topics?: CourseRelatedTopic[] | null;
   course_reviews?: CourseReview[] | null;
@@ -42,6 +41,7 @@ export interface Course {
   course_events?: CourseEvent[] | null;
   course_banner?: WebMedia | null;
   course_thumbnail?: WebMedia | null;
+  certificate_sample?: WebMedia | null;
 };
 
 export interface CourseContent {
