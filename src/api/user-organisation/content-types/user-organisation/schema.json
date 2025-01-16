@@ -4,8 +4,7 @@
   "info": {
     "singularName": "user-organisation",
     "pluralName": "user-organisations",
-    "displayName": "User Organisation",
-    "description": ""
+    "displayName": "User Organisation"
   },
   "options": {
     "draftAndPublish": true
@@ -14,12 +13,6 @@
   "attributes": {
     "name": {
       "type": "string"
-    },
-    "users": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "user_organisation"
     }
   }
 }

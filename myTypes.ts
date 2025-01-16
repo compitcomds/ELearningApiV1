@@ -282,7 +282,6 @@ export interface UserOrganisation {
   publishedAt?: Date | string;
   locale?: string | null;
   name?: string;
-  users?: User[] | null;
 };
 
 export interface WebMedia {

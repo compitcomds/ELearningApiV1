@@ -521,7 +521,7 @@ export interface PluginUsersPermissionsUser
       'api::user-course-purchased.user-course-purchased'
     >;
     user_organisation: Schema.Attribute.Relation<
-      'manyToOne',
+      'oneToOne',
       'api::user-organisation.user-organisation'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1803,17 +1803,12 @@ export interface ApiUserOrganisationUserOrganisation
     singularName: 'user-organisation';
     pluralName: 'user-organisations';
     displayName: 'User Organisation';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Schema.Attribute.String;
-    users: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

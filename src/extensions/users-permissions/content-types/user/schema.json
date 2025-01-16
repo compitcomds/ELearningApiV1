@@ -77,9 +77,8 @@
     },
     "user_organisation": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::user-organisation.user-organisation",
-      "inversedBy": "users"
+      "relation": "oneToOne",
+      "target": "api::user-organisation.user-organisation"
     }
   }
 }
