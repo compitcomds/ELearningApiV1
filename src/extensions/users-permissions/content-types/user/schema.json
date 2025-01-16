@@ -74,6 +74,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::user-course-purchased.user-course-purchased"
+    },
+    "user_organisation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-organisation.user-organisation",
+      "inversedBy": "users"
     }
   }
 }

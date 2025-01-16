@@ -520,6 +520,10 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'api::user-course-purchased.user-course-purchased'
     >;
+    user_organisation: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::user-organisation.user-organisation'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1792,6 +1796,39 @@ export interface ApiUserCoursePurchasedUserCoursePurchased
   };
 }
 
+export interface ApiUserOrganisationUserOrganisation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'user_organisations';
+  info: {
+    singularName: 'user-organisation';
+    pluralName: 'user-organisations';
+    displayName: 'User Organisation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    users: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-organisation.user-organisation'
+    >;
+  };
+}
+
 export interface ApiWebMediaWebMedia extends Struct.CollectionTypeSchema {
   collectionName: 'web_medias';
   info: {
@@ -2221,6 +2258,7 @@ declare module '@strapi/strapi' {
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;
       'api::user-course-purchased.user-course-purchased': ApiUserCoursePurchasedUserCoursePurchased;
+      'api::user-organisation.user-organisation': ApiUserOrganisationUserOrganisation;
       'api::web-media.web-media': ApiWebMediaWebMedia;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
