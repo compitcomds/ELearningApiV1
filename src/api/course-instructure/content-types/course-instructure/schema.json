@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-instructure",
     "pluralName": "course-instructures",
-    "displayName": "Course_Instructure"
+    "displayName": "Course_Instructure",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,22 +13,23 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "description": {
       "type": "text"
-    },
-    "courses": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::course.course",
-      "inversedBy": "course_instructures"
     },
     "linkedIn_link": {
       "type": "string"
     },
     "website_link": {
       "type": "string"
+    },
+    "web_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
     }
   }
 }

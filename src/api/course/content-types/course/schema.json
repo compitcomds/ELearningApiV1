@@ -172,9 +172,8 @@
     },
     "course_instructures": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::course-instructure.course-instructure",
-      "mappedBy": "courses"
+      "relation": "oneToMany",
+      "target": "api::course-instructure.course-instructure"
     },
     "course_includes": {
       "type": "relation",

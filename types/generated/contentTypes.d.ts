@@ -735,7 +735,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     rating: Schema.Attribute.Decimal;
     number_of_student_enrolled: Schema.Attribute.Integer;
     course_instructures: Schema.Attribute.Relation<
-      'manyToMany',
+      'oneToMany',
       'api::course-instructure.course-instructure'
     >;
     course_includes: Schema.Attribute.Relation<
@@ -1396,16 +1396,22 @@ export interface ApiCourseInstructureCourseInstructure
     singularName: 'course-instructure';
     pluralName: 'course-instructures';
     displayName: 'Course_Instructure';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     description: Schema.Attribute.Text;
-    courses: Schema.Attribute.Relation<'manyToMany', 'api::course.course'>;
     linkedIn_link: Schema.Attribute.String;
     website_link: Schema.Attribute.String;
+    web_medias: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

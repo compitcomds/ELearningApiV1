@@ -131,11 +131,11 @@ export interface CourseInstructure {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  name?: string;
+  name: string;
   description?: string;
-  courses?: Course[] | null;
   linkedIn_link?: string;
   website_link?: string;
+  web_medias?: WebMedia[] | null;
 };
 
 export interface CourseModule {
