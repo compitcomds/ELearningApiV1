@@ -1,5 +1,4 @@
 {
-  "kind": "collectionType",
   "collectionName": "course_contents",
   "info": {
     "singularName": "course-content",
@@ -12,13 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "module_sr_number": {
-      "type": "integer"
-    },
     "course_modules": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-module.course-module"
     }
-  }
+  },
+  "kind": "collectionType"
 }

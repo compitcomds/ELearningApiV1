@@ -754,10 +754,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::course-what-you-learn.course-what-you-learn'
     >;
-    course_contents: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::course-content.course-content'
-    >;
     certificate_sample_text: Schema.Attribute.Text;
     course_discussion: Schema.Attribute.Relation<
       'oneToOne',
@@ -778,6 +774,10 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     certificate_sample: Schema.Attribute.Relation<
       'oneToOne',
       'api::web-media.web-media'
+    >;
+    course_modules: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -804,7 +804,6 @@ export interface ApiCourseContentCourseContent
     draftAndPublish: true;
   };
   attributes: {
-    module_sr_number: Schema.Attribute.Integer;
     course_modules: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-module.course-module'

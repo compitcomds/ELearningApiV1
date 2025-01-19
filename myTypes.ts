@@ -35,13 +35,13 @@ export interface Course {
   course_related_topics?: CourseRelatedTopic[] | null;
   course_reviews?: CourseReview[] | null;
   course_what_you_learns?: CourseWhatYouLearn[] | null;
-  course_contents?: CourseContent[] | null;
   certificate_sample_text?: string;
   course_discussion?: CourseDiscussion | null;
   course_events?: CourseEvent[] | null;
   course_banner?: WebMedia | null;
   course_thumbnail?: WebMedia | null;
   certificate_sample?: WebMedia | null;
+  course_modules?: CourseModule[] | null;
 };
 
 export interface CourseContent {
@@ -51,7 +51,6 @@ export interface CourseContent {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  module_sr_number?: number;
   course_modules?: CourseModule[] | null;
 };
 

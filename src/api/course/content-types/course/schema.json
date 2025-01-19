@@ -195,11 +195,6 @@
       "relation": "oneToMany",
       "target": "api::course-what-you-learn.course-what-you-learn"
     },
-    "course_contents": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::course-content.course-content"
-    },
     "certificate_sample_text": {
       "type": "text"
     },
@@ -227,6 +222,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::web-media.web-media"
+    },
+    "course_modules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module.course-module"
     }
   }
 }
