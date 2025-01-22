@@ -24,6 +24,10 @@
     "is_include_in_sample": {
       "type": "boolean",
       "default": false
+    },
+    "sr_number": {
+      "type": "integer",
+      "default": 9999
     }
   }
 }

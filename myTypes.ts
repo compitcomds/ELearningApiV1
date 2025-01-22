@@ -199,6 +199,7 @@ export interface CourseModuleText {
   title?: string;
   course_module_text_value?: string;
   course_module_text_resources?: WebMedia[] | null;
+  sr_number?: number;
 };
 
 export interface CourseModuleVideo {
@@ -212,6 +213,7 @@ export interface CourseModuleVideo {
   description?: string;
   iFrame?: string;
   is_include_in_sample?: boolean;
+  sr_number?: number;
 };
 
 export interface CourseRelatedTopic {

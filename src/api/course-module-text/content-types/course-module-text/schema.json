@@ -22,6 +22,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::web-media.web-media"
+    },
+    "sr_number": {
+      "type": "integer",
+      "default": 9999
     }
   }
 }

@@ -1590,6 +1590,7 @@ export interface ApiCourseModuleTextCourseModuleText
       'oneToMany',
       'api::web-media.web-media'
     >;
+    sr_number: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<9999>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1623,6 +1624,7 @@ export interface ApiCourseModuleVideoCourseModuleVideo
     iFrame: Schema.Attribute.Text;
     is_include_in_sample: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    sr_number: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<9999>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-20T08:15:20.959Z"
+    "x-generation-date": "2025-01-22T11:45:14.835Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13674,6 +13674,9 @@
                                           }
                                         }
                                       },
+                                      "sr_number": {
+                                        "type": "integer"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -13750,6 +13753,9 @@
                                       },
                                       "is_include_in_sample": {
                                         "type": "boolean"
+                                      },
+                                      "sr_number": {
+                                        "type": "integer"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -16735,6 +16741,9 @@
                                     }
                                   }
                                 },
+                                "sr_number": {
+                                  "type": "integer"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -16811,6 +16820,9 @@
                                 },
                                 "is_include_in_sample": {
                                   "type": "boolean"
+                                },
+                                "sr_number": {
+                                  "type": "integer"
                                 },
                                 "createdAt": {
                                   "type": "string",
@@ -23477,6 +23489,9 @@
                     }
                   }
                 },
+                "sr_number": {
+                  "type": "integer"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -23553,6 +23568,9 @@
                 },
                 "is_include_in_sample": {
                   "type": "boolean"
+                },
+                "sr_number": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -25613,6 +25631,9 @@
                   "example": "string or id"
                 }
               },
+              "sr_number": {
+                "type": "integer"
+              },
               "locale": {
                 "type": "string"
               },
@@ -26022,6 +26043,9 @@
               }
             }
           },
+          "sr_number": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -26089,6 +26113,9 @@
                       }
                     }
                   }
+                },
+                "sr_number": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -26178,6 +26205,9 @@
               "is_include_in_sample": {
                 "type": "boolean"
               },
+              "sr_number": {
+                "type": "integer"
+              },
               "locale": {
                 "type": "string"
               },
@@ -26254,6 +26284,9 @@
           },
           "is_include_in_sample": {
             "type": "boolean"
+          },
+          "sr_number": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -26566,6 +26599,9 @@
                 },
                 "is_include_in_sample": {
                   "type": "boolean"
+                },
+                "sr_number": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -27827,6 +27863,9 @@
                               }
                             }
                           },
+                          "sr_number": {
+                            "type": "integer"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -27903,6 +27942,9 @@
                           },
                           "is_include_in_sample": {
                             "type": "boolean"
+                          },
+                          "sr_number": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -30761,6 +30803,9 @@
                     }
                   }
                 },
+                "sr_number": {
+                  "type": "integer"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -30837,6 +30882,9 @@
                 },
                 "is_include_in_sample": {
                   "type": "boolean"
+                },
+                "sr_number": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -32583,6 +32631,9 @@
                                         }
                                       }
                                     },
+                                    "sr_number": {
+                                      "type": "integer"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -32659,6 +32710,9 @@
                                     },
                                     "is_include_in_sample": {
                                       "type": "boolean"
+                                    },
+                                    "sr_number": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
