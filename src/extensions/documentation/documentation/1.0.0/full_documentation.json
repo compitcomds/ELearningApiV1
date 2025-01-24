@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-22T11:45:14.835Z"
+    "x-generation-date": "2025-01-24T13:13:07.967Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13589,6 +13589,9 @@
                                       "one_time": {
                                         "type": "boolean"
                                       },
+                                      "sr_number": {
+                                        "type": "integer"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -16655,6 +16658,9 @@
                                 },
                                 "one_time": {
                                   "type": "boolean"
+                                },
+                                "sr_number": {
+                                  "type": "integer"
                                 },
                                 "createdAt": {
                                   "type": "string",
@@ -23646,6 +23652,9 @@
                 "one_time": {
                   "type": "boolean"
                 },
+                "sr_number": {
+                  "type": "integer"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -23881,6 +23890,9 @@
               "one_time": {
                 "type": "boolean"
               },
+              "sr_number": {
+                "type": "integer"
+              },
               "locale": {
                 "type": "string"
               },
@@ -23954,6 +23966,9 @@
           },
           "one_time": {
             "type": "boolean"
+          },
+          "sr_number": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -24263,6 +24278,9 @@
                 },
                 "one_time": {
                   "type": "boolean"
+                },
+                "sr_number": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -27706,6 +27724,9 @@
                           "one_time": {
                             "type": "boolean"
                           },
+                          "sr_number": {
+                            "type": "integer"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -30394,6 +30415,9 @@
                 "one_time": {
                   "type": "boolean"
                 },
+                "sr_number": {
+                  "type": "integer"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -32545,6 +32569,9 @@
                                     },
                                     "one_time": {
                                       "type": "boolean"
+                                    },
+                                    "sr_number": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",

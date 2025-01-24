@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-module-test",
     "pluralName": "course-module-tests",
-    "displayName": "Course_Module_Test"
+    "displayName": "Course_Module_Test",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +21,9 @@
     "one_time": {
       "type": "boolean",
       "default": true
+    },
+    "sr_number": {
+      "type": "integer"
     }
   }
 }

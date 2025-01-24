@@ -161,6 +161,7 @@ export interface CourseModuleTest {
   title?: string;
   marks?: number;
   one_time?: boolean;
+  sr_number?: number;
 };
 
 export interface CourseModuleTestQuestion {

@@ -1475,6 +1475,7 @@ export interface ApiCourseModuleTestCourseModuleTest
     singularName: 'course-module-test';
     pluralName: 'course-module-tests';
     displayName: 'Course_Module_Test';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1483,6 +1484,7 @@ export interface ApiCourseModuleTestCourseModuleTest
     title: Schema.Attribute.String;
     marks: Schema.Attribute.Integer;
     one_time: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    sr_number: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
