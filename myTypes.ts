@@ -162,6 +162,7 @@ export interface CourseModuleTest {
   marks?: number;
   one_time?: boolean;
   sr_number?: number;
+  course_module_test_questions?: CourseModuleTestQuestion[] | null;
 };
 
 export interface CourseModuleTestQuestion {

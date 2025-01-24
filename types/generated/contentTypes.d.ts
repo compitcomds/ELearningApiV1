@@ -1485,6 +1485,10 @@ export interface ApiCourseModuleTestCourseModuleTest
     marks: Schema.Attribute.Integer;
     one_time: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     sr_number: Schema.Attribute.Integer;
+    course_module_test_questions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module-test-question.course-module-test-question'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

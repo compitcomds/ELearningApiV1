@@ -24,6 +24,11 @@
     },
     "sr_number": {
       "type": "integer"
+    },
+    "course_module_test_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module-test-question.course-module-test-question"
     }
   }
 }
