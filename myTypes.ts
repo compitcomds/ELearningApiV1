@@ -275,6 +275,7 @@ export interface UserCoursePurchased {
   course?: Course | null;
   validUpto?: Date | string;
   result?: "Pass" | "Fail" | "Absent";
+  user?: User | null;
 };
 
 export interface UserOrganisation {
