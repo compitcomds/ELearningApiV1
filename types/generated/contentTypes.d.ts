@@ -524,6 +524,8 @@ export interface PluginUsersPermissionsUser
       'oneToOne',
       'api::user-organisation.user-organisation'
     >;
+    verify_by_organisation: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
