@@ -79,6 +79,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::user-organisation.user-organisation"
+    },
+    "verify_by_organisation": {
+      "type": "boolean"
     }
   }
 }

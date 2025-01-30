@@ -1794,6 +1794,10 @@ export interface ApiUserCoursePurchasedUserCoursePurchased
     course: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
     validUpto: Schema.Attribute.Date;
     result: Schema.Attribute.Enumeration<['Pass', 'Fail', 'Absent']>;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
