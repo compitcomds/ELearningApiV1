@@ -179,6 +179,7 @@ export interface CourseModuleTest {
   one_time?: boolean;
   sr_number?: number;
   course_module_test_questions?: CourseModuleTestQuestion[] | null;
+  duration?: Date | string;
 };
 
 export interface CourseModuleTestQuestion {

@@ -29,6 +29,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-module-test-question.course-module-test-question"
+    },
+    "duration": {
+      "type": "time",
+      "default": "00:15:00.000"
     }
   }
 }

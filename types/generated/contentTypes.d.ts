@@ -1531,6 +1531,8 @@ export interface ApiCourseModuleTestCourseModuleTest
       'oneToMany',
       'api::course-module-test-question.course-module-test-question'
     >;
+    duration: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'00:15:00.000'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
