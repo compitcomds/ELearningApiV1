@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assesment_histories",
+  "info": {
+    "singularName": "assesment-history",
+    "pluralName": "assesment-histories",
+    "displayName": "Assesment_History"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_module_test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-module-test.course-module-test"
+    },
+    "consumedTime": {
+      "type": "time"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "totalMarks": {
+      "type": "decimal"
+    },
+    "obtainedMarks": {
+      "type": "decimal"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "one_time": {
+      "type": "boolean"
+    }
+  }
+}

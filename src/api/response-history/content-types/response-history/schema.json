@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "response_histories",
+  "info": {
+    "singularName": "response-history",
+    "pluralName": "response-histories",
+    "displayName": "Response_History",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questionId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-module-test-question.course-module-test-question"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "selectedOption": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-module-test-question-option.course-module-test-question-option"
+    },
+    "correctOption": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-module-test-question-option.course-module-test-question-option"
+    },
+    "marks": {
+      "type": "decimal"
+    }
+  }
+}

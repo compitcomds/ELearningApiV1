@@ -1,4 +1,20 @@
 
+export interface AssesmentHistory {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  course_module_test?: CourseModuleTest | null;
+  consumedTime?: Date | string;
+  completed?: boolean;
+  totalMarks?: number;
+  obtainedMarks?: number;
+  user?: User | null;
+  one_time?: boolean;
+};
+
 export interface Categorie {
   id?: number;
   documentId?: string;
@@ -250,6 +266,20 @@ export interface CourseWhatYouLearn {
   locale?: string | null;
   value?: string;
   sr_number?: number;
+};
+
+export interface ResponseHistory {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  questionId?: CourseModuleTestQuestion | null;
+  user?: User | null;
+  selectedOption?: CourseModuleTestQuestionOption | null;
+  correctOption?: CourseModuleTestQuestionOption | null;
+  marks?: number;
 };
 
 export interface UserCourseHistory {

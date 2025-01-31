@@ -541,6 +541,46 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiAssesmentHistoryAssesmentHistory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'assesment_histories';
+  info: {
+    singularName: 'assesment-history';
+    pluralName: 'assesment-histories';
+    displayName: 'Assesment_History';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course_module_test: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::course-module-test.course-module-test'
+    >;
+    consumedTime: Schema.Attribute.Time;
+    completed: Schema.Attribute.Boolean;
+    totalMarks: Schema.Attribute.Decimal;
+    obtainedMarks: Schema.Attribute.Decimal;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    one_time: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::assesment-history.assesment-history'
+    >;
+  };
+}
+
 export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1739,6 +1779,51 @@ export interface ApiCourseWhatYouLearnCourseWhatYouLearn
   };
 }
 
+export interface ApiResponseHistoryResponseHistory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'response_histories';
+  info: {
+    singularName: 'response-history';
+    pluralName: 'response-histories';
+    displayName: 'Response_History';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    questionId: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::course-module-test-question.course-module-test-question'
+    >;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    selectedOption: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::course-module-test-question-option.course-module-test-question-option'
+    >;
+    correctOption: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::course-module-test-question-option.course-module-test-question-option'
+    >;
+    marks: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::response-history.response-history'
+    >;
+  };
+}
+
 export interface ApiUserCourseHistoryUserCourseHistory
   extends Struct.CollectionTypeSchema {
   collectionName: 'user_course_histories';
@@ -2252,6 +2337,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::assesment-history.assesment-history': ApiAssesmentHistoryAssesmentHistory;
       'api::categorie.categorie': ApiCategorieCategorie;
       'api::course.course': ApiCourseCourse;
       'api::course-content.course-content': ApiCourseContentCourseContent;
@@ -2270,6 +2356,7 @@ declare module '@strapi/strapi' {
       'api::course-related-topic.course-related-topic': ApiCourseRelatedTopicCourseRelatedTopic;
       'api::course-review.course-review': ApiCourseReviewCourseReview;
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
+      'api::response-history.response-history': ApiResponseHistoryResponseHistory;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;
       'api::user-course-purchased.user-course-purchased': ApiUserCoursePurchasedUserCoursePurchased;
       'api::user-organisation.user-organisation': ApiUserOrganisationUserOrganisation;
