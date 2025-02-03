@@ -4,7 +4,8 @@
   "info": {
     "singularName": "assesment-history",
     "pluralName": "assesment-histories",
-    "displayName": "Assesment_History"
+    "displayName": "Assesment_History",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -35,6 +36,11 @@
     },
     "one_time": {
       "type": "boolean"
+    },
+    "response_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::response-history.response-history"
     }
   }
 }
