@@ -13,7 +13,6 @@ export interface AssesmentHistory {
   obtainedMarks?: number;
   user?: User | null;
   one_time?: boolean;
-  response_histories?: ResponseHistory[] | null;
 };
 
 export interface Categorie {
@@ -282,6 +281,7 @@ export interface ResponseHistory {
   selectedOption?: CourseModuleTestQuestionOption | null;
   correctOption?: CourseModuleTestQuestionOption | null;
   marks?: number;
+  assesment_history?: AssesmentHistory | null;
 };
 
 export interface UserCourseHistory {

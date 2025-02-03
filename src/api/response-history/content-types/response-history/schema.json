@@ -34,6 +34,11 @@
     },
     "marks": {
       "type": "decimal"
+    },
+    "assesment_history": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assesment-history.assesment-history"
     }
   }
 }

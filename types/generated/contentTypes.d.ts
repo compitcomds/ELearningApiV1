@@ -567,10 +567,6 @@ export interface ApiAssesmentHistoryAssesmentHistory
       'plugin::users-permissions.user'
     >;
     one_time: Schema.Attribute.Boolean;
-    response_histories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::response-history.response-history'
-    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

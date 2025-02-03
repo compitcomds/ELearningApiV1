@@ -36,11 +36,6 @@
     },
     "one_time": {
       "type": "boolean"
-    },
-    "response_histories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::response-history.response-history"
     }
   }
 }
