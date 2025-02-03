@@ -1812,6 +1812,10 @@ export interface ApiResponseHistoryResponseHistory
       'api::course-module-test-question-option.course-module-test-question-option'
     >;
     marks: Schema.Attribute.Decimal;
+    assesment_history: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::assesment-history.assesment-history'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
