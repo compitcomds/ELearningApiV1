@@ -567,6 +567,7 @@ export interface ApiAssesmentHistoryAssesmentHistory
       'plugin::users-permissions.user'
     >;
     one_time: Schema.Attribute.Boolean;
+    course: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

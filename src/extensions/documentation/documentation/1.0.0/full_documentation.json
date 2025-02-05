@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-03T11:45:46.350Z"
+    "x-generation-date": "2025-02-05T08:46:31.658Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13178,6 +13178,17 @@
               "one_time": {
                 "type": "boolean"
               },
+              "course": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
+              },
               "locale": {
                 "type": "string"
               },
@@ -15973,6 +15984,17 @@
           "one_time": {
             "type": "boolean"
           },
+          "course": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "documentId": {
+                "type": "string"
+              }
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -16061,6 +16083,17 @@
                 },
                 "one_time": {
                   "type": "boolean"
+                },
+                "course": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
                 },
                 "createdAt": {
                   "type": "string",
@@ -38255,6 +38288,17 @@
               },
               "one_time": {
                 "type": "boolean"
+              },
+              "course": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
               },
               "createdAt": {
                 "type": "string",

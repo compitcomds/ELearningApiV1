@@ -13,6 +13,7 @@ export interface AssesmentHistory {
   obtainedMarks?: number;
   user?: User | null;
   one_time?: boolean;
+  course?: Course | null;
 };
 
 export interface Categorie {

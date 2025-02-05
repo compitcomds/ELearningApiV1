@@ -36,6 +36,11 @@
     },
     "one_time": {
       "type": "boolean"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
     }
   }
 }
