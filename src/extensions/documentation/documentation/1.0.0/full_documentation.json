@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-24T09:14:20.910Z"
+    "x-generation-date": "2025-03-12T09:53:58.765Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -15872,6 +15872,9 @@
                   "name": {
                     "type": "string"
                   },
+                  "certificate_limit": {
+                    "type": "integer"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -15927,6 +15930,9 @@
               },
               "verify_by_organisation": {
                 "type": "boolean"
+              },
+              "certificate_limit": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -18207,6 +18213,9 @@
                               "name": {
                                 "type": "string"
                               },
+                              "certificate_limit": {
+                                "type": "integer"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -18262,6 +18271,9 @@
                           },
                           "verify_by_organisation": {
                             "type": "boolean"
+                          },
+                          "certificate_limit": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -22293,6 +22305,9 @@
                         "name": {
                           "type": "string"
                         },
+                        "certificate_limit": {
+                          "type": "integer"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -22348,6 +22363,9 @@
                     },
                     "verify_by_organisation": {
                       "type": "boolean"
+                    },
+                    "certificate_limit": {
+                      "type": "integer"
                     },
                     "createdAt": {
                       "type": "string",
@@ -34737,6 +34755,9 @@
                   "name": {
                     "type": "string"
                   },
+                  "certificate_limit": {
+                    "type": "integer"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -34792,6 +34813,9 @@
               },
               "verify_by_organisation": {
                 "type": "boolean"
+              },
+              "certificate_limit": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -38104,6 +38128,9 @@
                   "name": {
                     "type": "string"
                   },
+                  "certificate_limit": {
+                    "type": "integer"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -38159,6 +38186,9 @@
               },
               "verify_by_organisation": {
                 "type": "boolean"
+              },
+              "certificate_limit": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -41583,6 +41613,9 @@
                             "name": {
                               "type": "string"
                             },
+                            "certificate_limit": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -41638,6 +41671,9 @@
                         },
                         "verify_by_organisation": {
                           "type": "boolean"
+                        },
+                        "certificate_limit": {
+                          "type": "integer"
                         },
                         "createdAt": {
                           "type": "string",
@@ -42464,6 +42500,9 @@
               "name": {
                 "type": "string"
               },
+              "certificate_limit": {
+                "type": "integer"
+              },
               "locale": {
                 "type": "string"
               },
@@ -42531,6 +42570,9 @@
           },
           "name": {
             "type": "string"
+          },
+          "certificate_limit": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -42834,6 +42876,9 @@
                 },
                 "name": {
                   "type": "string"
+                },
+                "certificate_limit": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",

@@ -526,6 +526,7 @@ export interface PluginUsersPermissionsUser
     >;
     verify_by_organisation: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    certificate_limit: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1915,12 +1916,14 @@ export interface ApiUserOrganisationUserOrganisation
     singularName: 'user-organisation';
     pluralName: 'user-organisations';
     displayName: 'User Organisation';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Schema.Attribute.String;
+    certificate_limit: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

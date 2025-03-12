@@ -4,7 +4,8 @@
   "info": {
     "singularName": "user-organisation",
     "pluralName": "user-organisations",
-    "displayName": "User Organisation"
+    "displayName": "User Organisation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,9 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "certificate_limit": {
+      "type": "integer"
     }
   }
 }

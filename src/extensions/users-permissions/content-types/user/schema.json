@@ -83,6 +83,9 @@
     "verify_by_organisation": {
       "type": "boolean",
       "default": false
+    },
+    "certificate_limit": {
+      "type": "integer"
     }
   }
 }
