@@ -1928,6 +1928,10 @@ export interface ApiUserOrganisationUserOrganisation
   attributes: {
     name: Schema.Attribute.String;
     user_email: Schema.Attribute.Email;
+    user_organisation: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

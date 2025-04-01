@@ -320,6 +320,7 @@ export interface UserOrganisation {
   locale?: string | null;
   name?: string;
   user_email?: string;
+  user_organisation?: User | null;
 };
 
 export interface WebMedia {

@@ -17,6 +17,11 @@
     },
     "user_email": {
       "type": "email"
+    },
+    "user_organisation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
