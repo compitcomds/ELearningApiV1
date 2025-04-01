@@ -527,6 +527,10 @@ export interface PluginUsersPermissionsUser
     verify_by_organisation: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     certificate_limit: Schema.Attribute.Integer;
+    certificate_media: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::web-media.web-media'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

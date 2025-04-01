@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-03-28T10:16:36.400Z"
+    "x-generation-date": "2025-04-01T12:19:11.530Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -15877,6 +15877,17 @@
               "certificate_limit": {
                 "type": "integer"
               },
+              "certificate_media": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -18160,6 +18171,17 @@
                           },
                           "certificate_limit": {
                             "type": "integer"
+                          },
+                          "certificate_media": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "documentId": {
+                                "type": "string"
+                              }
+                            }
                           },
                           "createdAt": {
                             "type": "string",
@@ -22195,6 +22217,17 @@
                     },
                     "certificate_limit": {
                       "type": "integer"
+                    },
+                    "certificate_media": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
                     },
                     "createdAt": {
                       "type": "string",
@@ -34589,6 +34622,17 @@
               "certificate_limit": {
                 "type": "integer"
               },
+              "certificate_media": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -37904,6 +37948,17 @@
               },
               "certificate_limit": {
                 "type": "integer"
+              },
+              "certificate_media": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
               },
               "createdAt": {
                 "type": "string",
@@ -41332,6 +41387,17 @@
                         },
                         "certificate_limit": {
                           "type": "integer"
+                        },
+                        "certificate_media": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "documentId": {
+                              "type": "string"
+                            }
+                          }
                         },
                         "createdAt": {
                           "type": "string",
