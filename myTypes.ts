@@ -319,7 +319,7 @@ export interface UserOrganisation {
   publishedAt?: Date | string;
   locale?: string | null;
   name?: string;
-  certificate_limit?: number;
+  user_email?: string;
 };
 
 export interface WebMedia {

@@ -15,8 +15,8 @@
     "name": {
       "type": "string"
     },
-    "certificate_limit": {
-      "type": "integer"
+    "user_email": {
+      "type": "email"
     }
   }
 }
