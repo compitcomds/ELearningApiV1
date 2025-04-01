@@ -522,7 +522,7 @@ export interface PluginUsersPermissionsUser
     >;
     user_organisation: Schema.Attribute.Relation<
       'oneToOne',
-      'api::user-organisation.user-organisation'
+      'plugin::users-permissions.user'
     >;
     verify_by_organisation: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;

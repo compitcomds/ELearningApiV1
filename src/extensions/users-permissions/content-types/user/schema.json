@@ -78,7 +78,7 @@
     "user_organisation": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::user-organisation.user-organisation"
+      "target": "plugin::users-permissions.user"
     },
     "verify_by_organisation": {
       "type": "boolean",
