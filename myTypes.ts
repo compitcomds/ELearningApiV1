@@ -270,6 +270,22 @@ export interface CourseWhatYouLearn {
   sr_number?: number;
 };
 
+export interface Event {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name?: string;
+  place?: string;
+  time?: string;
+  date?: Date | string;
+  url_link?: string;
+  web_medias?: WebMedia[] | null;
+  description?: string;
+};
+
 export interface ResponseHistory {
   id?: number;
   documentId?: string;

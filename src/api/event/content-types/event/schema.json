@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "url_link": {
+      "type": "string"
+    },
+    "web_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

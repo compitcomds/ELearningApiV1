@@ -1788,6 +1788,40 @@ export interface ApiCourseWhatYouLearnCourseWhatYouLearn
   };
 }
 
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    place: Schema.Attribute.String;
+    time: Schema.Attribute.String;
+    date: Schema.Attribute.Date;
+    url_link: Schema.Attribute.String;
+    web_medias: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
+    description: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+  };
+}
+
 export interface ApiResponseHistoryResponseHistory
   extends Struct.CollectionTypeSchema {
   collectionName: 'response_histories';
@@ -2375,6 +2409,7 @@ declare module '@strapi/strapi' {
       'api::course-related-topic.course-related-topic': ApiCourseRelatedTopicCourseRelatedTopic;
       'api::course-review.course-review': ApiCourseReviewCourseReview;
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
+      'api::event.event': ApiEventEvent;
       'api::response-history.response-history': ApiResponseHistoryResponseHistory;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;
       'api::user-course-purchased.user-course-purchased': ApiUserCoursePurchasedUserCoursePurchased;
