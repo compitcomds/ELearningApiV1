@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "help_and_supports",
+  "info": {
+    "singularName": "help-and-support",
+    "pluralName": "help-and-supports",
+    "displayName": "help&Support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "issue": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "Problem_Status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "in process",
+        "resolved"
+      ],
+      "default": "pending"
+    }
+  }
+}

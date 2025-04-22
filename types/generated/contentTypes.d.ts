@@ -1822,6 +1822,43 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHelpAndSupportHelpAndSupport
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'help_and_supports';
+  info: {
+    singularName: 'help-and-support';
+    pluralName: 'help-and-supports';
+    displayName: 'help&Support';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    issue: Schema.Attribute.String;
+    message: Schema.Attribute.Text;
+    user_email: Schema.Attribute.String;
+    Problem_Status: Schema.Attribute.Enumeration<
+      ['pending', 'in process', 'resolved']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::help-and-support.help-and-support'
+    >;
+  };
+}
+
 export interface ApiResponseHistoryResponseHistory
   extends Struct.CollectionTypeSchema {
   collectionName: 'response_histories';
@@ -2410,6 +2447,7 @@ declare module '@strapi/strapi' {
       'api::course-review.course-review': ApiCourseReviewCourseReview;
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
       'api::event.event': ApiEventEvent;
+      'api::help-and-support.help-and-support': ApiHelpAndSupportHelpAndSupport;
       'api::response-history.response-history': ApiResponseHistoryResponseHistory;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;
       'api::user-course-purchased.user-course-purchased': ApiUserCoursePurchasedUserCoursePurchased;

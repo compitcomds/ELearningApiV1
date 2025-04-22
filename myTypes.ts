@@ -286,6 +286,21 @@ export interface Event {
   description?: string;
 };
 
+export interface HelpAndSupport {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name?: string;
+  email?: string;
+  issue?: string;
+  message?: string;
+  user_email?: string;
+  Problem_Status?: "pending" | "in process" | "resolved";
+};
+
 export interface ResponseHistory {
   id?: number;
   documentId?: string;
