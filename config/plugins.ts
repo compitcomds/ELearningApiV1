@@ -2,6 +2,7 @@
 import type { EmailConfig } from "strapi-plugin-email-designer-5/dist/server/src";
 
 
+
 export default ({ env }) => ({
     "gen-types": {
       enabled: true,
