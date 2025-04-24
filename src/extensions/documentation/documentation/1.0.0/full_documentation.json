@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-04-22T09:58:10.305Z"
+    "x-generation-date": "2025-04-24T07:55:45.967Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -15962,7 +15962,9 @@
                                   "Zap  ",
                                   "ZapOff  ",
                                   "ZoomIn  ",
-                                  "ZoomOut  "
+                                  "ZoomOut  ",
+                                  "BookOpenCheck  ",
+                                  "ShieldCheck  "
                                 ]
                               },
                               "sr_number": {
@@ -18232,7 +18234,9 @@
                           "Zap  ",
                           "ZapOff  ",
                           "ZoomIn  ",
-                          "ZoomOut  "
+                          "ZoomOut  ",
+                          "BookOpenCheck  ",
+                          "ShieldCheck  "
                         ]
                       },
                       "sr_number": {
@@ -21455,7 +21459,9 @@
                     "Zap  ",
                     "ZapOff  ",
                     "ZoomIn  ",
-                    "ZoomOut  "
+                    "ZoomOut  ",
+                    "BookOpenCheck  ",
+                    "ShieldCheck  "
                   ]
                 },
                 "sr_number": {
@@ -26517,7 +26523,9 @@
                   "Zap  ",
                   "ZapOff  ",
                   "ZoomIn  ",
-                  "ZoomOut  "
+                  "ZoomOut  ",
+                  "BookOpenCheck  ",
+                  "ShieldCheck  "
                 ]
               },
               "sr_number": {
@@ -26974,7 +26982,9 @@
               "Zap  ",
               "ZapOff  ",
               "ZoomIn  ",
-              "ZoomOut  "
+              "ZoomOut  ",
+              "BookOpenCheck  ",
+              "ShieldCheck  "
             ]
           },
           "sr_number": {
@@ -27666,7 +27676,9 @@
                     "Zap  ",
                     "ZapOff  ",
                     "ZoomIn  ",
-                    "ZoomOut  "
+                    "ZoomOut  ",
+                    "BookOpenCheck  ",
+                    "ShieldCheck  "
                   ]
                 },
                 "sr_number": {
@@ -34707,7 +34719,9 @@
                                   "Zap  ",
                                   "ZapOff  ",
                                   "ZoomIn  ",
-                                  "ZoomOut  "
+                                  "ZoomOut  ",
+                                  "BookOpenCheck  ",
+                                  "ShieldCheck  "
                                 ]
                               },
                               "sr_number": {
@@ -39159,7 +39173,9 @@
                                   "Zap  ",
                                   "ZapOff  ",
                                   "ZoomIn  ",
-                                  "ZoomOut  "
+                                  "ZoomOut  ",
+                                  "BookOpenCheck  ",
+                                  "ShieldCheck  "
                                 ]
                               },
                               "sr_number": {
@@ -42573,7 +42589,9 @@
                         "Zap  ",
                         "ZapOff  ",
                         "ZoomIn  ",
-                        "ZoomOut  "
+                        "ZoomOut  ",
+                        "BookOpenCheck  ",
+                        "ShieldCheck  "
                       ]
                     },
                     "sr_number": {
@@ -46117,7 +46135,9 @@
                                   "Zap  ",
                                   "ZapOff  ",
                                   "ZoomIn  ",
-                                  "ZoomOut  "
+                                  "ZoomOut  ",
+                                  "BookOpenCheck  ",
+                                  "ShieldCheck  "
                                 ]
                               },
                               "sr_number": {

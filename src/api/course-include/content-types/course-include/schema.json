@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-include",
     "pluralName": "course-includes",
-    "displayName": "Course_Include"
+    "displayName": "Course_Include",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -397,7 +398,9 @@
         "Zap  ",
         "ZapOff  ",
         "ZoomIn  ",
-        "ZoomOut  "
+        "ZoomOut  ",
+        "BookOpenCheck  ",
+        "ShieldCheck  "
       ]
     },
     "sr_number": {

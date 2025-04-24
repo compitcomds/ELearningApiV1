@@ -1030,6 +1030,7 @@ export interface ApiCourseIncludeCourseInclude
     singularName: 'course-include';
     pluralName: 'course-includes';
     displayName: 'Course_Include';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1419,6 +1420,8 @@ export interface ApiCourseIncludeCourseInclude
         'ZapOff  ',
         'ZoomIn  ',
         'ZoomOut  ',
+        'BookOpenCheck  ',
+        'ShieldCheck  ',
       ]
     >;
     sr_number: Schema.Attribute.Integer;
