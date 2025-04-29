@@ -531,6 +531,7 @@ export interface PluginUsersPermissionsUser
       'oneToOne',
       'api::web-media.web-media'
     >;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -91,6 +91,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::web-media.web-media"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
