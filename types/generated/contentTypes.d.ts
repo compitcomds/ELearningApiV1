@@ -589,6 +589,38 @@ export interface ApiAssesmentHistoryAssesmentHistory
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    featuredImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.String;
+    excerpt: Schema.Attribute.String;
+    metaKeywords: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+  };
+}
+
 export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -2432,6 +2464,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::assesment-history.assesment-history': ApiAssesmentHistoryAssesmentHistory;
+      'api::blog.blog': ApiBlogBlog;
       'api::categorie.categorie': ApiCategorieCategorie;
       'api::course.course': ApiCourseCourse;
       'api::course-content.course-content': ApiCourseContentCourseContent;

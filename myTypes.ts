@@ -16,6 +16,22 @@ export interface AssesmentHistory {
   course?: Course | null;
 };
 
+export interface Blog {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  slug: string;
+  title: string;
+  featuredImage?: Media | null;
+  metaTitle: string;
+  metaDescription?: string;
+  excerpt?: string;
+  metaKeywords?: string;
+};
+
 export interface Categorie {
   id?: number;
   documentId?: string;
