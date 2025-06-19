@@ -25,11 +25,12 @@ export interface Blog {
   locale?: string | null;
   slug: string;
   title: string;
-  featuredImage?: Media | null;
   metaTitle: string;
   metaDescription?: string;
   excerpt?: string;
   metaKeywords?: string;
+  web_medias?: WebMedia[] | null;
+  content?: string;
 };
 
 export interface Categorie {

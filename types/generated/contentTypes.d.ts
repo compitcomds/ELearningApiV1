@@ -595,6 +595,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'Blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -602,13 +603,15 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   attributes: {
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    featuredImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     metaDescription: Schema.Attribute.String;
     excerpt: Schema.Attribute.String;
     metaKeywords: Schema.Attribute.String;
+    web_medias: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
