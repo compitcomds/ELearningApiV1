@@ -589,6 +589,34 @@ export interface ApiAssesmentHistoryAssesmentHistory
   };
 }
 
+export interface ApiAwardAward extends Struct.CollectionTypeSchema {
+  collectionName: 'awards';
+  info: {
+    singularName: 'award';
+    pluralName: 'awards';
+    displayName: 'Award';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    web_medias: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::award.award'>;
+  };
+}
+
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -1861,6 +1889,37 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    web_medias: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-media.web-media'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery.gallery'
+    >;
+  };
+}
+
 export interface ApiHelpAndSupportHelpAndSupport
   extends Struct.CollectionTypeSchema {
   collectionName: 'help_and_supports';
@@ -2467,6 +2526,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::assesment-history.assesment-history': ApiAssesmentHistoryAssesmentHistory;
+      'api::award.award': ApiAwardAward;
       'api::blog.blog': ApiBlogBlog;
       'api::categorie.categorie': ApiCategorieCategorie;
       'api::course.course': ApiCourseCourse;
@@ -2487,6 +2547,7 @@ declare module '@strapi/strapi' {
       'api::course-review.course-review': ApiCourseReviewCourseReview;
       'api::course-what-you-learn.course-what-you-learn': ApiCourseWhatYouLearnCourseWhatYouLearn;
       'api::event.event': ApiEventEvent;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::help-and-support.help-and-support': ApiHelpAndSupportHelpAndSupport;
       'api::response-history.response-history': ApiResponseHistoryResponseHistory;
       'api::user-course-history.user-course-history': ApiUserCourseHistoryUserCourseHistory;

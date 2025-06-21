@@ -16,6 +16,17 @@ export interface AssesmentHistory {
   course?: Course | null;
 };
 
+export interface Award {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  title?: string;
+  web_medias?: WebMedia[] | null;
+};
+
 export interface Blog {
   id?: number;
   documentId?: string;
@@ -301,6 +312,17 @@ export interface Event {
   url_link?: string;
   web_medias?: WebMedia[] | null;
   description?: string;
+};
+
+export interface Gallery {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  description?: string;
+  web_medias?: WebMedia[] | null;
 };
 
 export interface HelpAndSupport {
