@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "awards",
+  "info": {
+    "singularName": "award",
+    "pluralName": "awards",
+    "displayName": "Award"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "web_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::web-media.web-media"
+    }
+  }
+}
