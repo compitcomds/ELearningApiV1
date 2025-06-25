@@ -25,6 +25,7 @@ export interface Award {
   locale?: string | null;
   title?: string;
   web_medias?: WebMedia[] | null;
+  order?: number;
 };
 
 export interface Blog {

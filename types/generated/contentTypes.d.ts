@@ -595,6 +595,7 @@ export interface ApiAwardAward extends Struct.CollectionTypeSchema {
     singularName: 'award';
     pluralName: 'awards';
     displayName: 'Award';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -605,6 +606,14 @@ export interface ApiAwardAward extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::web-media.web-media'
     >;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
